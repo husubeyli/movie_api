@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movieday</title>
+  <link rel="stylesheet" href="assets/css/xama.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="header bg-red">
+    <div class="header-brand"><a href="#">Movieday</a></div>
+    <button class="header-button header-button-right" onclick="toggleModel()">+</button>
+  </div>
+  <div class="page-wrapper">
+    <div class="search bg-red">
+      <div class="search-bar">
+        <input type="text" name="" value="" placeholder="Enter movie name">
+        <i class="far fa-search"></i>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <h1 class="text-800 m-y-20">Movies</h1>
+      <div class="row" id="movie-list"></div>
+      <div class="p-y-30" id="loading"></div>
+      <button class="btn btn-success m-b-20" onclick="fetchMovies(page)">Load More</button>
+    </div>
+  </div>
+  <div class="toolbar">
+    <ul>
+      <li class="active">
+        <a href="#">
+          <i class="fad fa-film"></i><span>Movies</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-fire"></i><span>Series</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-history"></i><span>History</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="modal" id="new-movie-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="text-600 text-large">New Movie</div>
+        <button class="modal-close btn" onclick="toggleModel()"><i class="far fa-times"></i></button>
+      </div>
+      <div class="modal-body p-t-10">
+        <div class="input-group m-b-15">
+          <input type="text" class="form-control" placeholder="Movie name" id="movie-title">
+        </div>
+        <div class="input-group m-b-15">
+          <input type="text" class="form-control" placeholder="Movie thumbnail url" id="thumbnail">
+        </div>
+        <div class="input-group m-b-15">
+          <select class="form-control" id="category">
+            <option selected disabled>Select category</option>
+            <option value="Action">Action</option>
+            <option value="Dram">Dram</option>
+            <option value="Cartoon">Cartoon</option>
+            <option value="Fantastic">Fantastic</option>
+            <option value="Sci Fi">Sci Fi</option>
+            <option value="Comedy">Comedy</option>
+          </select>
+        </div>
+        <div class="input-group m-b-15">
+          <div class="dflex">
+            <label for="type" class="m-r-15">
+              <input type="radio" class="inpCheked" name="type" value="movie" checked> Movie
+            </label>
+            <label for="type">
+              <input type="radio" class="inpCheked" name="type" value="serie"> Serie
+            </label>
+          </div>
+        </div>
+        <div class="input-group m-b-15">
+          <input type="text" class="form-control" placeholder="Actors" id="actors">
+        </div>
+        <div class="input-group m-b-15">
+          <input type="text" class="form-control" id="rating" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Rating (enter number from 1 to 5)">
+        </div>
+        <div class="input-group m-b-15">
+          <textarea class="form-control" placeholder="About of movie" id="about"></textarea>
+        </div>
+        <div class="input-group m-b-15">
+          <button class="btn btn-success" onclick="addMovie()">Add New Movie</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>

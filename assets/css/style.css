@@ -1,0 +1,276 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: 100vh;
+}
+button, input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.page-wrapper {
+  flex: 1;
+  overflow-y: scroll;
+}
+/***** Header *****/
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.header-button {
+  color: #fff;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  font-size: 23px;
+}
+.header-button-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.header-brand > a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+/***** Search *****/
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 0 30px;
+}
+.search-bar {
+  position: relative;
+  width: 100%;
+}
+.search-bar input {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  padding: 13px;
+  font-size: 14px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+.search-bar i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+/***** Toolbar *****/
+.toolbar {
+  background: #fff;
+}
+.toolbar > ul {
+  display: flex;
+}
+.toolbar > ul > li {
+  flex: 1;
+}
+.toolbar > ul > li > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  padding: 10px 0;
+}
+.toolbar > ul > li.active > a {
+  color: #e80a0a;
+}
+.toolbar i {
+  font-size: 18px;
+}
+.toolbar span {
+  margin-top: 7px;
+  font-size: 8pt;
+}
+/***** Movie Card *****/
+.movie-card {
+  position: relative;
+  -webkit-transition: transform 0.1s;
+  transition: transform 0.1s;
+}
+.movie-card:active {
+  transform: scale(0.96);
+}
+.movie-card .image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-color: #eee;
+  border-radius: 12px;
+  height: 160px;
+  overflow: hidden;
+}
+.movie-card .content {
+  padding: 10px 0;
+  text-align: center;
+}
+/*************** Modal ***************/
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 9;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: bottom 0.2s;
+  transition: bottom 0.2s;
+}
+.modal.active {
+  bottom: 0;
+  backdrop-filter: blur(2px);
+}
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 30px 30px 0 0;
+  height: 95vh;
+  padding-top: 5px;
+}
+.modal-header {
+  position: relative;
+  padding: 20px;
+  text-align: center
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 30px!important;
+  height: 30px!important;
+  color: #888!important;
+  background: #eee!important;
+  border-radius: 50%!important;
+}
+/*************** Loader ***************/
+.loader {
+  display: block;
+  position: relative;
+  padding: 15px 0;
+}
+.loader span {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
+  border-right: 3px solid transparent;
+  -webkit-animation: loader 1s linear 0.2s infinite;
+  -moz-animation: loader 0.555s linear 0.2s infinite;
+  -o-animation: loader 0.555s linear 0.2s infinite;
+  -ms-animation: loader 0.555s linear 0.2s infinite;
+  animation: loader 0.555s linear 0.2s infinite;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*************** Button Group ***************/
+.btn {
+  display: block;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 0 10px;
+  width: 100%;
+  height: 39px;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn-success {
+  color: #fff;
+  background-color: #4cda64;
+}
+.btn-success:active {
+  color: #fff;
+  background-color: #38c750;
+}
+/*************** Form Elements ***************/
+.input-group {
+  position: relative;
+}
+.form-control {
+  background: #fcfcfc;
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  -webkit-appearance: none;
+}
+/***** Others *****/
+.ratings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -2.5px;
+}
+.ratings > li {
+  color: #aaa;
+  margin: 0 2.5px;
+}
+.ratings > li.fill {
+  color: #FFC107;
+}
+.ratings i {
+  font-size: 10px;
+}
+.bg-red {
+  background: #e80a0a;
+}
+.c-black {
+  color: #000;
+}
+.c-white {
+  color: #fff;
+}
+.c-red {
+  color: #e80a0a;
+}
+@media (min-width: 998px) {
+  .movie-card .image {
+    height: 260px;
+  }
+}
